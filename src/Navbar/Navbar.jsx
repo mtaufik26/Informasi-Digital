@@ -30,22 +30,23 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo Sekolah */}
           <div className="flex items-center space-x-4">
-            <img src="wikrama.png" alt="Logo" className="w-14 h-14 rounded-full" />
-            <p className="text-[#001E42] font-bold text-xl leading-tight">
-              SMK WIKRAMA <br /> BOGOR
+            <img src="wikrama.png" alt="Logo" className="w-12 h-12 rounded-full" />
+            <p className="text-[#001E42] font-bold text leading-tight">
+              SMK WIKRAMA <br/> BOGOR
             </p>
+
           </div>
 
           {/* Menu Navigasi */}
           <ul className="flex space-x-8">
-            <li><a href="#" className="text-[#001E42] text-lg font-semibold hover:text-blue-600">Beranda</a></li>
-            <li><a href="#" className="text-[#001E42] text-lg font-semibold hover:text-blue-600">PPDB</a></li>
+            <li><a href="#" className="text-[#001E42] text-base font-semibold hover:text-blue-600">Beranda</a></li>
+            <li><a href="#" className="text-[#001E42] text-base font-semibold hover:text-blue-600">PPDB</a></li>
 
             {/* Dropdown Profil */}
             <li className="relative">
               <button
                 onClick={() => toggleDropdown("profil")}
-                className="text-[#001E42] text-lg font-semibold hover:text-blue-600"
+                className="text-[#001E42] text-base font-semibold hover:text-blue-600"
               >
                 Profil +
               </button>
@@ -62,7 +63,7 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={() => toggleDropdown("jurusan")}
-                className="text-[#001E42] text-lg font-semibold hover:text-blue-600"
+                className="text-[#001E42] text-base font-semibold hover:text-blue-600"
               >
                 Jurusan +
               </button>
@@ -79,7 +80,7 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={() => toggleDropdown("program")}
-                className="text-[#001E42] text-lg font-semibold hover:text-blue-600"
+                className="text-[#001E42] text-base font-semibold hover:text-blue-600"
               >
                 Program +
               </button>
@@ -96,7 +97,7 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={() => toggleDropdown("sumberdaya")}
-                className="text-[#001E42] text-lg font-semibold hover:text-blue-600"
+                className="text-[#001E42] text-base font-semibold hover:text-blue-600"
               >
                 Sumber Daya +
               </button>
@@ -108,21 +109,21 @@ const Navbar = () => {
               )}
             </li>
 
-            <li><a href="#" className="text-[#001E42] text-lg font-semibold hover:text-blue-600">Berita</a></li>
-            <li><a href="#" className="text-[#001E42] text-lg font-semibold hover:text-blue-600">Tentang Kami</a></li>
+            <li><a href="#" className="text-[#001E42] text-base font-semibold hover:text-blue-600">Berita</a></li>
+            <li><a href="#" className="text-[#001E42] text-base font-semibold hover:text-blue-600">Tentang Kami</a></li>
           </ul>
 
           {/* Search & Daftar */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Cari"
-                className="px-4 py-2 w-40 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-1 w-32 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <FaSearch className="absolute right-3 top-3 text-gray-500 cursor-pointer" />
+              <FaSearch className="absolute right-2 top-2 text-gray-500 cursor-pointer text-sm" />
             </div>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg text-lg font-semibold">
+            <button className="bg-blue-600 text-white px-4 py-1 rounded-md text-base font-semibold">
               Daftar
             </button>
           </div>
