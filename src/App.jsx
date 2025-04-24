@@ -1,15 +1,14 @@
-import Beranda from "./Beranda";
-import Navbar from "./Navbar/Navbar";
-import Moto from "./Moto"
+import React from "react";
+import Navbar from "./components/Navbar";
+import Beranda from "./components/Beranda";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Navbar />
       <Beranda />
-      <Moto />
     </div>
   );
-}
+};
 
 export default App;
