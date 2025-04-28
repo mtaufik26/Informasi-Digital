@@ -1,5 +1,6 @@
 import Navbar from './components/navbar';
 import Sidebar from './components/sidebar';
+import Dashboard from './dashboard';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Sidebar />
       <div className="flex-1">
         <Navbar />
+        <Dashboard />
       </div>
     </div>
   );
