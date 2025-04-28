@@ -97,68 +97,93 @@ const VisiSection = () => (
   </div>
 );
 
-const JurusanSection = () => (
-  <div id="jurusan" className="py-20 bg-white px-4 md:px-20">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-gray-900">Program Keahlian</h2>
-      <p className="mt-2 text-gray-600">SMK bidang teknologi informasi, bisnis manajemen, dan pariwisata</p>
+const JurusanSection = () => {
+  const jurusanList = [
+    {
+      title: "Teknik Jaringan Komputer dan Telekomunikasi",
+      image: "/images/tjkt.jpg",
+      careers: [
+        "Technical Support",
+        "Network Administrator",
+        "IoT (Internet of Things) Engineer",
+        "System Administrator",
+        "Cloud Engineer",
+        "Security Engineer",
+      ],
+    },
+    {
+      title: "Pengembangan Perangkat Lunak dan Gim",
+      image: "/images/rpl.jpg",
+      careers: [
+        "System Designer",
+        "Database Administrator",
+        "Programmer",
+        "Web Developer",
+        "Mobile Programmer",
+        "Security Engineer",
+      ],
+    },
+    {
+      title: "Pemasaran (digital marketing)",
+      image: "/images/marketing.jpg",
+      careers: [
+        "Content Creator",
+        "Admin Social Media",
+        "Social Media Marketing",
+        "SEO Specialist",
+        "Ads Manager",
+        "Marketing Manager",
+      ],
+    },
+    {
+      title: "Perhotelan (kepariwisataan)",
+      image: "/images/hotel.jpg",
+      careers: [
+        "Guest Relationship Officer",
+        "Call Center & Receptionist",
+        "Front Officer",
+        "Room & Public Area Attendant",
+        "Laundry & Linen Staff",
+        "Room Service",
+      ],
+    },
+  ];
+
+  return (
+    <div id="jurusan" className="py-20 bg-gray-100 text-center">
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold text-blue-900">Kompetensi Keahlian</h2>
+        <p className="mt-2 text-gray-600">
+          SMK bidang teknologi informasi, bisnis manajemen, dan pariwisata
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8">
+        {jurusanList.map((jurusan, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4">
+            <img 
+              src={jurusan.image} 
+              alt={jurusan.title} 
+              className="w-full h-40 object-cover mb-4 rounded-lg"
+            />
+            <h3 className="text-lg font-bold mb-2 text-blue-800">{jurusan.title}</h3>
+            <ul className="text-left text-sm text-gray-700 mb-4 px-2">
+              {jurusan.careers.map((career, idx) => (
+                <li key={idx} className="flex items-start mb-2">
+                  <span className="text-green-500 mr-2 mt-1">•</span> 
+                  <span>{career}</span>
+                </li>
+              ))}
+            </ul>
+            <button className="mt-auto bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900 transition">
+              Selengkapnya →
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* TJKT */}
-      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <img src="/tjkt.jpg" alt="TJKT" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="font-bold text-xl mb-2 text-blue-600">TJKT</h3>
-        <p className="text-gray-700 text-sm mb-3">Teknik Jaringan Komputer dan Telekomunikasi</p>
-        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
-          <li>Technical Support</li>
-          <li>Network Administrator</li>
-          <li>IoT Engineer</li>
-          <li>Cloud Engineer</li>
-        </ul>
-      </div>
-
-      {/* PPLG */}
-      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <img src="/pplg.jpg" alt="PPLG" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="font-bold text-xl mb-2 text-green-600">PPLG</h3>
-        <p className="text-gray-700 text-sm mb-3">Pengembangan Perangkat Lunak dan Gim</p>
-        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
-          <li>Programmer</li>
-          <li>Web Developer</li>
-          <li>Mobile Developer</li>
-          <li>Database Administrator</li>
-        </ul>
-      </div>
-
-      {/* PMN */}
-      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <img src="/pmn.jpg" alt="PMN" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="font-bold text-xl mb-2 text-pink-600">PMN</h3>
-        <p className="text-gray-700 text-sm mb-3">Pemasaran (Digital Marketing)</p>
-        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
-          <li>Content Creator</li>
-          <li>SEO Specialist</li>
-          <li>Social Media Admin</li>
-          <li>Marketing Manager</li>
-        </ul>
-      </div>
-
-      {/* HTL */}
-      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <img src="/htl.jpg" alt="HTL" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="font-bold text-xl mb-2 text-yellow-600">HTL</h3>
-        <p className="text-gray-700 text-sm mb-3">Perhotelan (Kepariwisataan)</p>
-        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
-          <li>Guest Relationship</li>
-          <li>Front Office</li>
-          <li>Room Service</li>
-          <li>Laundry Staff</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 const MotoSection = () => {
   return (
@@ -206,14 +231,14 @@ const MotoSection = () => {
         <div className="flex-1 relative w-full h-full flex justify-center">
           <div className="relative w-96 h-64 rounded-lg shadow-lg overflow-hidden -top-10">
             <img
-              src="/welcome.jpg" // Ganti sesuai nama filemu  
+              src="/welcome.jpg"
               alt="Sekolah Wikrama"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="absolute top-0 left-5 w-96 h-64 rounded-lg shadow-lg overflow-hidden border-4 border-white">
             <img
-              src="/wik.jpg" // Ganti sesuai nama filemu
+              src="/wik.jpg"
               alt="Kegiatan Wikrama"
               className="w-full h-full object-cover"
             />
@@ -227,27 +252,34 @@ const MotoSection = () => {
 const TentangSection = () => (
   <div id="tentang" className="py-20 bg-white text-center">
     <h2 className="text-3xl font-bold mb-4">Tentang Kami</h2>
-    <p>
-      SMK Wikrama berdiri sejak tahun 1996 dan terus berkembang menjadi sekolah unggulan.
+    <p className="max-w-4xl mx-auto text-gray-600">
+      SMK Wikrama Bogor didirikan pada tahun 1996 oleh Ir. Itasia Dina Sulvianti dan Dr. H.RP Agus Lelana di bawah naungan Yayasan Prawitama. 
+      Sekolah ini terus berkembang menjadi sekolah unggulan dengan berbagai prestasi di tingkat nasional dan internasional.
     </p>
   </div>
 );
 
 const TestimoniSection = () => (
   <div id="testimoni" className="py-20 bg-gray-100 text-center">
-    <h2 className="text-3xl font-bold mb-4">Testimoni</h2>
-    <p>
-      "Sekolah ini membentuk karakter dan kemampuan saya menjadi lebih baik!" – Alumni
+    <h2 className="text-3xl font-bold mb-4">Apa Kata Mereka?</h2>
+    <p className="max-w-2xl mx-auto text-gray-600 italic">
+      "SMK Wikrama tidak hanya mengajarkan keterampilan teknis, tapi juga membentuk karakter dan kepribadian siswa. 
+      Saya sangat berterima kasih atas pendidikan yang saya dapatkan di sini." 
+      <span className="block mt-2 font-semibold not-italic">- Alumni PPLG Angkatan 2019</span>
     </p>
   </div>
 );
 
 const BiayaSection = () => (
   <div id="biaya" className="py-20 bg-white text-center">
-    <h2 className="text-3xl font-bold mb-4">Biaya</h2>
-    <p>
-      Informasi lengkap biaya pendaftaran dan pendidikan tersedia di sini.
+    <h2 className="text-3xl font-bold mb-4">Biaya Pendidikan</h2>
+    <p className="max-w-4xl mx-auto text-gray-600 mb-8">
+      SMK Wikrama Bogor menyediakan pendidikan berkualitas dengan biaya terjangkau. 
+      Terdapat berbagai fasilitas penunjang pembelajaran yang modern dan lengkap.
     </p>
+    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow">
+      Lihat Rincian Biaya
+    </button>
   </div>
 );
 
