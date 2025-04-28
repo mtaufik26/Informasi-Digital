@@ -101,7 +101,7 @@ const JurusanSection = () => {
   const jurusanList = [
     {
       title: "Teknik Jaringan Komputer dan Telekomunikasi",
-      image: "/images/",
+      image: "/images/tjkt.jpg",
       careers: [
         "Technical Support",
         "Network Administrator",
@@ -161,17 +161,22 @@ const JurusanSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8">
         {jurusanList.map((jurusan, index) => (
           <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4">
-            <img src={jurusan.image} alt={jurusan.title} className="w-full h-40 object-cover mb-4" />
+            <img 
+              src={jurusan.image} 
+              alt={jurusan.title} 
+              className="w-full h-40 object-cover mb-4 rounded-lg"
+            />
             <h3 className="text-lg font-bold mb-2 text-blue-800">{jurusan.title}</h3>
-            <ul className="text-left text-sm text-gray-700 mb-4">
+            <ul className="text-left text-sm text-gray-700 mb-4 px-2">
               {jurusan.careers.map((career, idx) => (
-                <li key={idx} className="flex items-center mb-1">
-                  <span className="text-green-500 mr-2">✔️</span> {career}
+                <li key={idx} className="flex items-start mb-2">
+                  <span className="text-green-500 mr-2 mt-1">•</span> 
+                  <span>{career}</span>
                 </li>
               ))}
             </ul>
-            <button className="mt-auto bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">
-              Selengkapnya..
+            <button className="mt-auto bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900 transition">
+              Selengkapnya →
             </button>
           </div>
         ))}
@@ -180,30 +185,101 @@ const JurusanSection = () => {
   );
 };
 
+const MotoSection = () => {
+  return (
+    <div id="moto" className="py-20 bg-white px-4 md:px-20">
+      <div className="text-center mb-12">
+        <div className="flex justify-center items-center gap-4 mb-4">
+          <div className="w-16 h-1 bg-blue-600 rounded-full"></div>
+          <h2 className="text-3xl font-bold text-gray-900">Moto</h2>
+          <div className="w-16 h-1 bg-blue-600 rounded-full"></div>
+        </div>
+        <p className="text-gray-600 mt-2">Ilmu yang Amaliah, Amal yang Ilmiah, Akhlakul Karimah</p>
+      </div>
+
+      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
+        {/* Left - Text */}
+        <div className="flex-1 text-left">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Mendidik dengan hati dan teknologi
+          </h3>
+          <p className="text-gray-700 mb-4">
+            Visi kami: <br />
+            Menjadi sekolah kejuruan <span className="font-semibold">teladan nasional</span> yang menghasilkan
+            lulusan yang mampu memenuhi kebutuhan <span className="font-semibold">industri 4.0</span>, berkarakter
+            <span className="font-semibold"> profil pelajar Pancasila</span>, dan berjiwa
+            <span className="font-semibold"> kewirausahaan</span> pada tahun 2028, dengan berpedoman pada
+            <span className="font-semibold"> Al Qur'an dan Hadist</span>.
+          </p>
+
+          {/* Tambahan: Karakter Utama */}
+          <h4 className="text-lg font-bold text-gray-900 mb-2">Karakter Utama Insan Wikrama:</h4>
+          <ul className="list-disc list-inside text-gray-700 mb-6 space-y-1">
+            <li>Jujur</li>
+            <li>Bersih</li>
+            <li>Hemat</li>
+            <li>Berjamaah</li>
+            <li>Ikhlas Memberi</li>
+          </ul>
+
+          <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow">
+            Website sekolah
+          </button>
+        </div>
+
+        {/* Right - Images */}
+        <div className="flex-1 relative w-full h-full flex justify-center">
+          <div className="relative w-96 h-64 rounded-lg shadow-lg overflow-hidden -top-10">
+            <img
+              src="/welcome.jpg"
+              alt="Sekolah Wikrama"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute top-0 left-5 w-96 h-64 rounded-lg shadow-lg overflow-hidden border-4 border-white">
+            <img
+              src="/wik.jpg"
+              alt="Kegiatan Wikrama"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const TentangSection = () => (
   <div id="tentang" className="py-20 bg-white text-center">
     <h2 className="text-3xl font-bold mb-4">Tentang Kami</h2>
-    <p>
-      SMK Wikrama berdiri sejak tahun 1996 dan terus berkembang menjadi sekolah unggulan.
+    <p className="max-w-4xl mx-auto text-gray-600">
+      SMK Wikrama Bogor didirikan pada tahun 1996 oleh Ir. Itasia Dina Sulvianti dan Dr. H.RP Agus Lelana di bawah naungan Yayasan Prawitama. 
+      Sekolah ini terus berkembang menjadi sekolah unggulan dengan berbagai prestasi di tingkat nasional dan internasional.
     </p>
   </div>
 );
 
 const TestimoniSection = () => (
   <div id="testimoni" className="py-20 bg-gray-100 text-center">
-    <h2 className="text-3xl font-bold mb-4">Testimoni</h2>
-    <p>
-      "Sekolah ini membentuk karakter dan kemampuan saya menjadi lebih baik!" – Alumni
+    <h2 className="text-3xl font-bold mb-4">Apa Kata Mereka?</h2>
+    <p className="max-w-2xl mx-auto text-gray-600 italic">
+      "SMK Wikrama tidak hanya mengajarkan keterampilan teknis, tapi juga membentuk karakter dan kepribadian siswa. 
+      Saya sangat berterima kasih atas pendidikan yang saya dapatkan di sini." 
+      <span className="block mt-2 font-semibold not-italic">- Alumni PPLG Angkatan 2019</span>
     </p>
   </div>
 );
 
 const BiayaSection = () => (
   <div id="biaya" className="py-20 bg-white text-center">
-    <h2 className="text-3xl font-bold mb-4">Biaya</h2>
-    <p>
-      Informasi lengkap biaya pendaftaran dan pendidikan tersedia di sini.
+    <h2 className="text-3xl font-bold mb-4">Biaya Pendidikan</h2>
+    <p className="max-w-4xl mx-auto text-gray-600 mb-8">
+      SMK Wikrama Bogor menyediakan pendidikan berkualitas dengan biaya terjangkau. 
+      Terdapat berbagai fasilitas penunjang pembelajaran yang modern dan lengkap.
     </p>
+    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow">
+      Lihat Rincian Biaya
+    </button>
   </div>
 );
 
@@ -213,6 +289,7 @@ const Beranda = () => {
       <WelcomeSection />
       <VisiSection />
       <JurusanSection />
+      <MotoSection />
       <TentangSection />
       <TestimoniSection />
       <BiayaSection />
