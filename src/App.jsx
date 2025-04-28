@@ -1,14 +1,20 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Beranda from "./components/Beranda";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Beranda from './components/Beranda';
+import Dashboard from './admin/dashboard';
+import Berita from './admin/news/index';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Navbar />
-      <Beranda />
-    </div>
+    <Router>
+      <Routes>
+      {/* <Beranda /> */}
+        <Route path="/" element={<Beranda />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/news/index" element={<Berita />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
