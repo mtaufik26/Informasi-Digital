@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,16 +57,7 @@ const Navbar = () => {
           {/* Search */}
           <div className="flex items-center space-x-3">
             <div className="relative">
-              <input
-                type="text"
-                placeholder="Cari"
-                className={`px-3 py-1 w-32 border bg-transparent rounded-md text-sm placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 ${
-                  isScrolled
-                    ? "border-black text-black placeholder-black"
-                    : "border-white text-white placeholder-white"
-                }`}
-              />
-              <FaSearch
+              <FiMenu 
                 className={`absolute right-2 top-2 cursor-pointer text-sm ${
                   isScrolled ? "text-black" : "text-white"
                 }`}
