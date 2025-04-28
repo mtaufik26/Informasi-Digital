@@ -97,88 +97,17 @@ const VisiSection = () => (
   </div>
 );
 
-const JurusanSection = () => {
-  const jurusanList = [
-    {
-      title: "Teknik Jaringan Komputer dan Telekomunikasi",
-      image: "/images/",
-      careers: [
-        "Technical Support",
-        "Network Administrator",
-        "IoT (Internet of Things) Engineer",
-        "System Administrator",
-        "Cloud Engineer",
-        "Security Engineer",
-      ],
-    },
-    {
-      title: "Pengembangan Perangkat Lunak dan Gim",
-      image: "/images/rpl.jpg",
-      careers: [
-        "System Designer",
-        "Database Administrator",
-        "Programmer",
-        "Web Developer",
-        "Mobile Programmer",
-        "Security Engineer",
-      ],
-    },
-    {
-      title: "Pemasaran (digital marketing)",
-      image: "/images/marketing.jpg",
-      careers: [
-        "Content Creator",
-        "Admin Social Media",
-        "Social Media Marketing",
-        "SEO Specialist",
-        "Ads Manager",
-        "Marketing Manager",
-      ],
-    },
-    {
-      title: "Perhotelan (kepariwisataan)",
-      image: "/images/hotel.jpg",
-      careers: [
-        "Guest Relationship Officer",
-        "Call Center & Receptionist",
-        "Front Officer",
-        "Room & Public Area Attendant",
-        "Laundry & Linen Staff",
-        "Room Service",
-      ],
-    },
-  ];
+const JurusanSection = () => (
+  <div id="jurusan" className="py-20 bg-gray-100 text-center">
+    <h2 className="text-3xl font-bold mb-4">Jurusan</h2>
+    <img 
+      src="/path-to-your-image.jpg" 
+      alt="Jurusan" 
+      className="mx-auto w-48 h-auto rounded-lg shadow-md"
+    />
+  </div>
+);
 
-  return (
-    <div id="jurusan" className="py-20 bg-gray-100 text-center">
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-blue-900">Kompetensi Keahlian</h2>
-        <p className="mt-2 text-gray-600">
-          SMK bidang teknologi informasi, bisnis manajemen, dan pariwisata
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8">
-        {jurusanList.map((jurusan, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4">
-            <img src={jurusan.image} alt={jurusan.title} className="w-full h-40 object-cover mb-4" />
-            <h3 className="text-lg font-bold mb-2 text-blue-800">{jurusan.title}</h3>
-            <ul className="text-left text-sm text-gray-700 mb-4">
-              {jurusan.careers.map((career, idx) => (
-                <li key={idx} className="flex items-center mb-1">
-                  <span className="text-green-500 mr-2">✔️</span> {career}
-                </li>
-              ))}
-            </ul>
-            <button className="mt-auto bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">
-              Selengkapnya..
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const TentangSection = () => (
   <div id="tentang" className="py-20 bg-white text-center">
