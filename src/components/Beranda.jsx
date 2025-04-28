@@ -98,13 +98,65 @@ const VisiSection = () => (
 );
 
 const JurusanSection = () => (
-  <div id="jurusan" className="py-20 bg-gray-100 text-center">
-    <h2 className="text-3xl font-bold mb-4">Jurusan</h2>
-    <img 
-      src="/path-to-your-image.jpg" 
-      alt="Jurusan" 
-      className="mx-auto w-48 h-auto rounded-lg shadow-md"
-    />
+  <div id="jurusan" className="py-20 bg-white px-4 md:px-20">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-900">Program Keahlian</h2>
+      <p className="mt-2 text-gray-600">SMK bidang teknologi informasi, bisnis manajemen, dan pariwisata</p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* TJKT */}
+      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="/tjkt.jpg" alt="TJKT" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="font-bold text-xl mb-2 text-blue-600">TJKT</h3>
+        <p className="text-gray-700 text-sm mb-3">Teknik Jaringan Komputer dan Telekomunikasi</p>
+        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
+          <li>Technical Support</li>
+          <li>Network Administrator</li>
+          <li>IoT Engineer</li>
+          <li>Cloud Engineer</li>
+        </ul>
+      </div>
+
+      {/* PPLG */}
+      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="/pplg.jpg" alt="PPLG" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="font-bold text-xl mb-2 text-green-600">PPLG</h3>
+        <p className="text-gray-700 text-sm mb-3">Pengembangan Perangkat Lunak dan Gim</p>
+        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
+          <li>Programmer</li>
+          <li>Web Developer</li>
+          <li>Mobile Developer</li>
+          <li>Database Administrator</li>
+        </ul>
+      </div>
+
+      {/* PMN */}
+      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="/pemasaran.jpg" alt="PMN" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="font-bold text-xl mb-2 text-pink-600">PMN</h3>
+        <p className="text-gray-700 text-sm mb-3">Pemasaran (Digital Marketing)</p>
+        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
+          <li>Content Creator</li>
+          <li>SEO Specialist</li>
+          <li>Social Media Admin</li>
+          <li>Marketing Manager</li>
+        </ul>
+      </div>
+
+      {/* HTL */}
+      <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="/hotel  .jpg" alt="HTL" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="font-bold text-xl mb-2 text-yellow-600">HTL</h3>
+        <p className="text-gray-700 text-sm mb-3">Perhotelan (Kepariwisataan)</p>
+        <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
+          <li>Guest Relationship</li>
+          <li>Front Office</li>
+          <li>Room Service</li>
+          <li>Laundry Staff</li>
+        </ul>
+      </div>
+    </div>
   </div>
 );
 
