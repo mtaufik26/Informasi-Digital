@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, FaSearch } from "react";
 import { FaBuilding, FaUserGraduate, FaChalkboardTeacher, FaLeaf } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 
@@ -185,23 +185,18 @@ const MotoSection = () => {
           </h3>
           <p className="text-gray-700 mb-4">
             Visi kami: <br />
-            Menjadi sekolah kejuruan <span className="font-semibold">teladan nasional</span> yang menghasilkan
-            lulusan yang mampu memenuhi kebutuhan <span className="font-semibold">industri 4.0</span>, berkarakter
-            <span className="font-semibold"> profil pelajar Pancasila</span>, dan berjiwa
-            <span className="font-semibold"> kewirausahaan</span> pada tahun 2028, dengan berpedoman pada
-            <span className="font-semibold"> Al Qur'an dan Hadist</span>.
+            Menjadi sekolah kejuruan <span className="font-semibold">teladan nasional</span> yang berbudaya
+            lingkungan, berkarakter sesuai <span className="font-semibold">Profil Pelajar Pancasila</span>, berbasis
+            <span className="font-semibold">teknologi informasi</span>, dan mampu memenuhi
+            <span className="font-semibold"> kebutuhan Industri 4.0</span>
           </p>
 
-          {/* Tambahan: Karakter Utama */}
-          <h4 className="text-lg font-bold text-gray-900 mb-2">Karakter Utama Insan Wikrama:</h4>
-          <ul className="list-disc list-inside text-gray-700 mb-6 space-y-1">
-            <li>Jujur</li>
-            <li>Bersih</li>
-            <li>Hemat</li>
-            <li>Berjamaah</li>
-            <li>Ikhlas Memberi</li>
+          <p className= "text-gray-700 mb-1">Misi Kami :</p>
+          <ul className="text-gray-700 mb-6 space-y-1">
+            <li>1. Mewujudkan sekolah sebagai benteng moralitas Bangsa.</li>
+            <li>2. Mendidik anak bangsa dengan hati dan teknologi sehingga memenuhi kebutuhan mutu dunia kerja.</li>
+            <li>3. Membangun kebersamaan sosial, jiwa kewirausahaan, dan gerakan cinta tanah air dan lingkungan.</li>
           </ul>
-
           <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow">
             Website sekolah
           </button>
@@ -209,16 +204,16 @@ const MotoSection = () => {
 
         {/* Right - Images */}
         <div className="flex-1 relative w-full h-full flex justify-center">
-          <div className="relative w-96 h-64 rounded-lg shadow-lg overflow-hidden -top-10">
+          <div className="relative w-96 h-64 left-10 rounded-lg shadow-lg overflow-hidden -top-10">
             <img
-              src="/welcome.jpg"
+              src="/welcome.jpg" // Ganti sesuai nama filemu  
               alt="Sekolah Wikrama"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="absolute top-0 left-5 w-96 h-64 rounded-lg shadow-lg overflow-hidden border-4 border-white">
-            <img
-              src="/wik.jpg"
+          <img
+              src="/wik.jpg" // Ganti sesuai nama filemu
               alt="Kegiatan Wikrama"
               className="w-full h-full object-cover"
             />
@@ -229,15 +224,147 @@ const MotoSection = () => {
   );
 };
 
-const TentangSection = () => (
-  <div id="tentang" className="py-20 bg-white text-center">
-    <h2 className="text-3xl font-bold mb-4">Tentang Kami</h2>
-    <p className="max-w-4xl mx-auto text-gray-600">
-      SMK Wikrama Bogor didirikan pada tahun 1996 oleh Ir. Itasia Dina Sulvianti dan Dr. H.RP Agus Lelana di bawah naungan Yayasan Prawitama. 
-      Sekolah ini terus berkembang menjadi sekolah unggulan dengan berbagai prestasi di tingkat nasional dan internasional.
-    </p>
+const TentangSection = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedImage, setSelectedImage] = useState(null); // State untuk gambar yang dipilih
+
+  const data = [
+    {
+      id: 1,
+      category: "Visi Misi",
+      title: "Visi Misi Moto",
+      description: "Paradigma pendidikan",
+      image: "/visi-misi.jpg",
+    },
+    {
+      id: 2,
+      category: "Kegiatan",
+      title: "Kegiatan Pondok Pesantren",
+      description: "Aktivitas harian santri",
+      image: "/kegiatan.jpg",
+    },
+    {
+      id: 3,
+      category: "Ekstrakurikuler",
+      title: "Ekstrakurikuler",
+      description: "Kegiatan siswa di luar kelas",
+      image: "/ekstrakurikuler.jpg",
+    },
+    {
+      id: 4,
+      category: "Prestasi",
+      title: "Prestasi Sekolah",
+      description: "Pencapaian siswa dan sekolah",
+      image: "/prestasi.jpg",
+    },
+    {
+      id: 5,
+      category: "Fasilitas",
+      title: "Fasilitas",
+      description: "Sarana dan prasarana sekolah",
+      image: "/fasilitas.jpg",
+    },
+    {
+      id: 6,
+      category: "Suasana",
+      title: "Suasana Sekolah",
+      description: "Lingkungan belajar yang nyaman",
+      image: "/suasana.jpg",
+    },
+  ];
+
+  const filteredData =
+    activeFilter === "All"
+      ? data
+      : data.filter((item) => item.category === activeFilter);
+
+      return (
+        <div id="tentang" className="py-20 bg-white text-center">
+          <h2 className="text-4xl font-bold mb-8 text-gray-900">Kenali Lebih Jauh</h2>
+          <p className="text-gray-600 mb-12">
+            Padamu negeri, kami berjanji lulus Wikrama siap membangun negeri
+          </p>
+          <div className="flex justify-center items-center space-x-4 mb-8">
+            {["All", "Visi Misi", "Fasilitas", "Kegiatan", "Prestasi", "Suasana"].map(
+              (filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-4 py-2 rounded-lg ${
+                    activeFilter === filter
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  }`}
+                >
+                  {filter}
+                </button>
+              )
+            )}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        {filteredData.map((item) => (
+          <div
+          key={item.id}
+          className="relative bg-gray-100 rounded-lg shadow hover:shadow-lg transition group"
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full object-cover rounded-lg"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition">
+            <h3 className="text-white font-bold text-lg">{item.title}</h3>
+            <p className="text-gray-300 text-sm">{item.description}</p>
+            // Ganti ikon SVG di dalam tombol
+            <button
+              className="mt-4 bg-white text-black p-3 rounded-full shadow hover:bg-gray-200"
+              onClick={() => setSelectedImage(item.image)} // Klik untuk membuka modal
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 4a6 6 0 100 12 6 6 0 000-12zm8 16l-4-4"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        ))}
+
+        {/* Modal untuk melihat gambar */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)} // Klik di luar modal untuk menutup
+        >
+          <div className="relative">
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="max-w-full max-h-screen rounded-lg"
+            />
+            <button
+              className="absolute top-2 right-2 bg-white text-black px-4 py-2 rounded-full shadow"
+              onClick={() => setSelectedImage(null)} // Tombol untuk menutup modal
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   </div>
 );
+};
 
 const TestimoniSection = () => (
   <div id="testimoni" className="py-20 bg-gray-100 text-center">
