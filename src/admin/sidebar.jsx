@@ -13,7 +13,7 @@ function Sidebar() {
 
   const pageItems = [
     { path: '/admin/news/index', icon: FiFileText, label: 'Berita' },
-    { path: '/admin/profil-alumni', icon: FiUsers, label: 'Profil Alumni' },
+    { path: '/admin/alumni/index', icon: FiUsers, label: 'Profil Alumni' },
     { path: '/admin/prestasi', icon: FiAward, label: 'Prestasi' },
     { path: '/admin/galeri', icon: FiImage, label: 'Galeri' },
     { path: '/admin/testimoni', icon: FiMessageSquare, label: 'Testimoni' },
@@ -36,7 +36,7 @@ function Sidebar() {
             : 'text-gray-600 hover:bg-gray-100'
         }`}
       >
-        <item.icon className={`mr-3 ${isActive ? 'text-white' : 'text-gray-400'}`} />
+        <item.icon className={`mr-3 ${isActive ? 'text-white' : 'text-gray-400'}`}/>
         {item.label}
       </Link>
     );

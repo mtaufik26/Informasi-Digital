@@ -123,7 +123,8 @@ export default function AlumniProfilePage() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <img
                         src={alumnus.image}
-                        alt={`${alumnus.name}'s profile`}                        className="h-10 w-10 rounded-full object-cover"
+                        alt={`${alumnus.name}'s profile`}
+                        className="h-10 w-10 rounded-full object-cover"
                       />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
