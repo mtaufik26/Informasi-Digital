@@ -1,8 +1,11 @@
 import React, { useState, FaSearch } from "react";
 import { FaBuilding, FaUserGraduate, FaChalkboardTeacher, FaLeaf } from "react-icons/fa";
+import Navbar from "../components/Navbar";
 
 const WelcomeSection = () => {
   return (
+    <>
+    <Navbar />
     <div id="home" className="relative w-full h-screen flex items-end justify-start bg-gray-100 font-poppins pb-56 pl-16">
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -32,6 +35,7 @@ const WelcomeSection = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 
