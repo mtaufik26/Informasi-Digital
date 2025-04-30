@@ -313,30 +313,33 @@ const TentangSection = () => {
             className="w-full object-cover rounded-lg"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition">
-            <h3 className="text-white font-bold text-lg">{item.title}</h3>
-            <p className="text-gray-300 text-sm">{item.description}</p>
-            // Ganti ikon SVG di dalam tombol
-            <button
-              className="mt-4 bg-white text-black p-3 rounded-full shadow hover:bg-gray-200"
-              onClick={() => setSelectedImage(item.image)} // Klik untuk membuka modal
+          <div className="absolute inset-0 bg-black bg-opacity-35 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition">
+          <h3 className="text-cyan-400 font-bold text-xl transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
+            {item.title}
+          </h3>
+          <p className="text-gray-200 text-sm mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
+            {item.description}
+          </p>
+          <button
+            className="mt-6 bg-white text-black p-3 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transform scale-95 hover:scale-105 transition duration-300"
+            onClick={() => setSelectedImage(item.image)} // Klik untuk membuka modal
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 4a6 6 0 100 12 6 6 0 000-12zm8 16l-4-4"
-                />
-              </svg>
-            </button>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 4a6 6 0 100 12 6 6 0 000-12zm8 16l-4-4"
+              />
+            </svg>
+          </button>
+        </div>
         </div>
         ))}
 
