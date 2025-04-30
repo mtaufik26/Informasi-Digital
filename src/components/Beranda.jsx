@@ -393,6 +393,16 @@ const BiayaSection = () => (
   </div>
 );
 
+const KontakSection = () => (
+  <div id="kontak" className="py-20 bg-white text-center">
+    <h2 className="text-3xl font-bold mb-4">Kontak Pendidikan</h2>
+    <p className="max-w-4xl mx-auto text-gray-600 mb-8">
+      SMK Wikrama Bogor menyediakan pendidikan berkualitas dengan biaya terjangkau. 
+      Terdapat berbagai fasilitas penunjang pembelajaran yang modern dan lengkap.
+    </p>
+  </div>
+);
+
 const Beranda = () => {
   return (
     <>
@@ -403,6 +413,7 @@ const Beranda = () => {
       <TentangSection />
       <TestimoniSection />
       <BiayaSection />
+      <KontakSection />
     </>
   );
 };

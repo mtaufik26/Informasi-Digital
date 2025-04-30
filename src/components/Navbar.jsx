@@ -46,8 +46,8 @@ const Navbar = () => {
 
           {/* Menu Navigasi */}
           <ul className="hidden md:flex space-x-8">
-            {["Home", "Visi Kami", "Jurusan", "Tentang Kami", "Testimoni", "Biaya"].map((label, index) => {
-              const hrefs = ["home", "visi", "jurusan", "tentang", "testimoni", "biaya"];
+            {["Home", "Visi Kami", "Jurusan", "Tentang Kami", "Testimoni", "Biaya", "Kontak"].map((label, index) => {
+              const hrefs = ["home", "visi", "jurusan", "tentang", "testimoni", "biaya", "kontak"];
               return (
                 <li key={label}>
                   <a
